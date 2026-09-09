@@ -16,16 +16,28 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            {p.github && (
-              <a
-                href={p.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono text-sm text-accent hover:underline"
-              >
-                {"</>"} View on GitHub ↗
-              </a>
-            )}
+            <div className="flex gap-4 flex-wrap">
+              {p.live && (
+                
+                  href={p.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-mono text-sm text-accent hover:underline"
+                >
+                  ↗ View Live
+                </a>
+              )}
+              {p.github && (
+                
+                  href={p.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-mono text-sm text-accent hover:underline"
+                >
+                  {"</>"} View on GitHub ↗
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
