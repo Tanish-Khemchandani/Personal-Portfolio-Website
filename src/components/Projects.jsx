@@ -18,24 +18,10 @@ export default function Projects() {
             </div>
             <div className="flex gap-4 flex-wrap">
               {p.live && (
-                
-                  href={p.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-mono text-sm text-accent hover:underline"
-                >
-                  ↗ View Live
-                </a>
+                <a href={p.live} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-mono text-sm text-accent hover:underline">↗ View Live</a>
               )}
               {p.github && (
-                
-                  href={p.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-mono text-sm text-accent hover:underline"
-                >
-                  {"</>"} View on GitHub ↗
-                </a>
+                <a href={p.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-mono text-sm text-accent hover:underline">{"</>"} View on GitHub ↗</a>
               )}
             </div>
           </div>
