@@ -1,26 +1,18 @@
 export const experience = [
   {
     date: "Jun 2026 — Present",
-    role: "Software Development Intern",
+    role: "MERN Stack Development Intern",
     org: "Hyunix Technologies · Vadodara",
-    desc: "Applying and expanding skills across the MERN stack — gaining hands-on experience, learning industry best practices, and contributing to real-world projects.",
+    desc: "Applying and expanding skills in MongoDB, Express.js, React.js, and Node.js while gaining hands-on experience, learning industry best practices, and contributing to real-world projects.",
     tags: ["MongoDB", "Express.js", "React.js", "Node.js"],
   },
   {
     date: "Mar 2026",
-    role: "Web Development Intern",
+    role: "Front-end Development Intern",
     org: "Param Group of Companies · Vadodara",
-    desc: "Built responsive front-end projects and reusable UI components using Tailwind CSS and React.js, applying modern styling and layout techniques to create structured, user-friendly interfaces.",
+    desc: "Worked as a Web Development Intern using Tailwind CSS and React.js — built responsive front-end projects, implemented reusable UI components, and applied modern styling and layout techniques to develop structured, user-friendly interfaces.",
     tags: ["React.js", "Tailwind CSS"],
     certificate: "/certificates/param-certificate.jpg",
-  },
-  {
-    date: "Jul 2024",
-    role: "Data Analyst — Job Simulation",
-    org: "Tata Group (via Forage)",
-    desc: "Completed the Tata Data Visualization job simulation: built data visualizations for TCS, prepared briefings for senior leadership, and created visuals to support executive decision-making.",
-    tags: ["Data Visualization", "Analysis"],
-    certificate: "/certificates/tata-certificate.png",
   },
 ];
 
@@ -31,7 +23,7 @@ export const skills = [
   },
   {
     title: "SOFTWARE & TOOLS",
-    items: ["Software Development", "Web Designing", "Digital Marketing Fundamentals"],
+    items: ["Software Development", "Web Development", "Digital Marketing Fundamentals"],
   },
   {
     title: "ANALYSIS",
@@ -40,6 +32,12 @@ export const skills = [
 ];
 
 export const projects = [
+  {
+    name: "TrueTransit Mobility",
+    desc: "A production logistics and courier platform built for a live client through Arctis Digital agency — doorstep pickup booking, shipment tracking, and end-to-end e-commerce logistics pages, with a PHP + PHPMailer/SMTP contact form for business inquiries.",
+    tags: ["PHP", "HTML", "Tailwind CSS", "JavaScript", "PHPMailer"],
+    live: "https://truetransitmobility.com/",
+  },
   {
     name: "Agency Landing Page",
     desc: "A responsive agency-style landing page built during my Web Development internship at Param Group of Companies — reusable UI components with modern, responsive layout and styling techniques.",
@@ -55,10 +53,11 @@ export const projects = [
 ];
 
 export const certifications = [
-  "Web Designing",
-  "Stock Market Analysis",
+  "Front-End Software Engineering Job Simulation",
+  "Data Analyst — Job Simulation",
   "Computer Basics and Tally ERP 9 with GST",
-  "Fundamentals of Digital Marketing",
+  "Stock Market Analysis",
+  "Web Development",
   "State Level TechFest — VYOM 2024",
 ];
 
