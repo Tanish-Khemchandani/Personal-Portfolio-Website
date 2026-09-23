@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import EntryGate from "./components/EntryGate";
 import Splash from "./components/Splash";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -13,16 +14,29 @@ import Footer from "./components/Footer";
 import BlackHoleBackground from "./components/BlackHoleBackground";
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [entered, setEntered] = useState(false);
+  const [showSplash, setShowSplash] = useState(false);
 
   useEffect(() => {
+    if (!entered) return;
     document.body.classList.add("no-scroll");
     const timer = setTimeout(() => {
       document.body.classList.remove("no-scroll");
       setShowSplash(false);
     }, 3050);
     return () => clearTimeout(timer);
-  }, []);
+  }, [entered]);
+
+  if (!entered) {
+    return (
+      <EntryGate
+        onEnter={() => {
+          setShowSplash(true);
+          setEntered(true);
+        }}
+      />
+    );
+  }
 
   return (
     <>
