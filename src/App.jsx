@@ -43,7 +43,7 @@ function App() {
       {showSplash && <Splash />}
       <BlackHoleBackground
         centre={{ voidX: 50, voidY: 50, voidRadius: 50 }}
-        colors={["#FF0000"]}
+        colors={["#C90000"]}
         outerRadius={64}
         particleSize={1}
         orbitSpeed={1}

@@ -71,7 +71,7 @@ export default function Contact() {
       id="contact"
       num="07"
       title="Contact"
-      subtitle="Send a message and it'll land directly in my inbox, each one with its own unique subject line."
+      subtitle="Drop me a line below — it'll land straight in my inbox, and every message gets its own unique subject line so nothing gets lost in the shuffle."
     >
       <form onSubmit={handleSubmit} className="glass-panel rounded-[14px] p-6 sm:p-8 max-w-140 flex flex-col gap-4">
         <div className="flex flex-col gap-1.5">
@@ -125,7 +125,7 @@ export default function Contact() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="font-mono text-base px-6 py-3.5 rounded-md bg-accent text-white font-semibold hover:bg-accent-dim transition-all hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 self-start"
+          className="radar-btn font-mono text-base hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 self-start"
         >
           {status === "sending" ? "Sending…" : "Send message"}
         </button>

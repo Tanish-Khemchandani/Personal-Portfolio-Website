@@ -43,7 +43,7 @@ export default function EntryGate({ onEnter }) {
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0xff0000,
+          color: 0xc90000,
           backgroundColor: 0x000000,
           maxDistance: 24.0,
         });
@@ -78,13 +78,13 @@ export default function EntryGate({ onEnter }) {
       <button
         type="button"
         onClick={onEnter}
-        className="group isolate inline-flex cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_48px_10px_rgba(255,59,59,0.45)] rounded-full relative shadow-[0_8px_40px_rgba(255,59,59,0.3)]"
+        className="group isolate inline-flex cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_48px_10px_rgba(201,0,0,0.45)] rounded-full relative shadow-[0_8px_40px_rgba(201,0,0,0.3)]"
         style={{
           "--spread": "90deg",
-          "--shimmer-color": "rgba(255,80,80,0.85)",
+          "--shimmer-color": "rgba(201,0,0,0.85)",
           "--speed": "4s",
           "--cut": "1px",
-          "--bg": "rgba(255,59,59,0.08)",
+          "--bg": "rgba(201,0,0,0.08)",
         }}
       >
         <div className="absolute inset-0">
@@ -102,7 +102,7 @@ export default function EntryGate({ onEnter }) {
               width: "200%",
               height: "200%",
               background:
-                "linear-gradient(90deg, transparent, rgba(255,59,59,0.55), rgba(255,120,120,0.55), rgba(255,59,59,0.55), transparent)",
+                "linear-gradient(90deg, transparent, rgba(201,0,0,0.55), rgba(230,70,70,0.55), rgba(201,0,0,0.55), transparent)",
               top: "50%",
               left: "50%",
             }}

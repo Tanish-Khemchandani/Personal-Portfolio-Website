@@ -48,7 +48,7 @@ export default function Hero() {
           <div className="flex gap-4 mt-9 flex-wrap items-center">
             <a
               href="#contact"
-              className="font-mono text-base px-6 py-3.5 rounded-md inline-flex items-center gap-2 bg-accent text-white font-semibold hover:bg-accent-dim transition-all hover:-translate-y-0.5"
+              className="radar-btn font-mono text-base hover:-translate-y-0.5"
             >
               Get in touch
             </a>

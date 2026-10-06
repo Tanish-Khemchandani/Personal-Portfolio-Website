@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useTheme } from "../ThemeContext";
 import tkLogo from "../assets/tk-logo.png";
 import useActiveSection from "../useActiveSection";
+import AnimatedThemeToggler from "./AnimatedThemeToggler";
 
 const links = ["about", "experience", "skills", "projects", "certifications", "education", "contact"];
 
@@ -39,15 +40,14 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-4 justify-self-end shrink-0">
-            <button
-              type="button"
-              onClick={toggleTheme}
+          <div className="flex items-center gap-2 sm:gap-4 justify-self-end shrink-0 relative">
+            <AnimatedThemeToggler
+              theme={theme}
+              onThemeChange={() => toggleTheme()}
+              variant="circle"
               aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
               className="w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center rounded-full border border-line text-ink-dim hover:text-accent hover:border-accent-dim transition-colors shrink-0"
-            >
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
+            />
             <a
               href="#contact"
               className="hidden sm:inline-block font-mono text-sm lg:text-base border border-accent-dim text-accent px-4 lg:px-5 py-2 lg:py-2.5 rounded-md hover:bg-accent/10 hover:border-accent transition-colors whitespace-nowrap"
@@ -59,37 +59,27 @@ export default function Navbar() {
               onClick={() => setOpen((o) => !o)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
-              className="lg:hidden w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center rounded-full border border-line text-ink-dim hover:text-accent hover:border-accent-dim transition-colors shrink-0"
+              className={`nav-hamburger-icon ${open ? "is-open" : ""} lg:hidden w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center rounded-full border border-line text-ink-dim hover:text-accent hover:border-accent-dim transition-colors shrink-0`}
             >
               {open ? <X size={18} /> : <Menu size={18} />}
             </button>
+
+            <ul className={`nav-stagger-panel lg:hidden ${open ? "is-open" : ""}`}>
+              {links.map((l) => (
+                <li key={l}>
+                  <a
+                    href={`#${l}`}
+                    onClick={() => setOpen(false)}
+                    className={active === l ? "is-active" : ""}
+                  >
+                    {l}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
-
-      {open && (
-        <div className="lg:hidden mt-2 rounded-2xl border border-line bg-bg px-4 sm:px-6 py-4 flex flex-col gap-1 shadow-lg">
-          {links.map((l) => (
-            <a
-              key={l}
-              href={`#${l}`}
-              onClick={() => setOpen(false)}
-              className={`capitalize transition-colors py-2.5 text-lg underline decoration-2 underline-offset-4 ${
-                active === l ? "text-accent decoration-accent" : "text-ink-dim decoration-transparent hover:text-accent hover:decoration-accent"
-              }`}
-            >
-              {l}
-            </a>
-          ))}
-          <a
-            href="#contact"
-            onClick={() => setOpen(false)}
-            className="sm:hidden mt-2 font-mono text-sm border border-accent-dim text-accent px-4 py-2.5 rounded-md text-center hover:bg-accent/10 transition-colors"
-          >
-            say hi ↗
-          </a>
-        </div>
-      )}
     </nav>
   );
 }

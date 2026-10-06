@@ -19,7 +19,7 @@ const DEFAULTS = {
   centre: DEFAULT_CENTRE,
   particleCount: 1000,
   particleSize: 6,
-  colors: ["#FF0000"],
+  colors: ["#C90000"],
   outerRadius: 100,
   tilt: 15,
   tiltSideway: 156,
