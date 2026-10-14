@@ -125,9 +125,15 @@ export default function Contact() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="radar-btn font-mono text-base hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 self-start"
+          className="glitch-btn font-mono text-base disabled:opacity-60 self-start"
         >
-          {status === "sending" ? "Sending…" : "Send message"}
+          <span className="glitch-btn__top" aria-hidden="true">
+            {status === "sending" ? "Sending…" : "Send message"}
+          </span>
+          <span className="glitch-btn__bottom" aria-hidden="true">
+            {status === "sending" ? "Sending…" : "Send message"}
+          </span>
+          <span className="relative z-10">{status === "sending" ? "Sending…" : "Send message"}</span>
         </button>
 
         {status === "sent" && (

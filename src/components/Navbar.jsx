@@ -26,14 +26,26 @@ export default function Navbar() {
             </span>
           </a>
 
-          <div className="hidden lg:flex justify-center gap-9 text-lg text-ink-dim">
-            {links.map((l) => (
+          <div
+            className="nav-pill hidden lg:inline-grid"
+            style={{
+              "--pos": links.indexOf(active) >= 0 ? links.indexOf(active) : 0,
+              "--count": links.length,
+            }}
+          >
+            {links.map((l, i) => (
               <a
                 key={l}
                 href={`#${l}`}
-                className={`hover:text-accent transition-colors capitalize whitespace-nowrap underline decoration-2 underline-offset-4 ${
-                  active === l ? "text-accent decoration-accent" : "decoration-transparent hover:decoration-accent"
-                }`}
+                aria-current={active === l ? "page" : undefined}
+                onMouseEnter={() => {
+                  document.querySelector(".nav-pill")?.style.setProperty("--pos", i);
+                }}
+                onMouseLeave={() => {
+                  const ai = links.indexOf(active);
+                  document.querySelector(".nav-pill")?.style.setProperty("--pos", ai >= 0 ? ai : 0);
+                }}
+                className="capitalize whitespace-nowrap"
               >
                 {l}
               </a>
@@ -50,9 +62,18 @@ export default function Navbar() {
             />
             <a
               href="#contact"
-              className="hidden sm:inline-block font-mono text-sm lg:text-base border border-accent-dim text-accent px-4 lg:px-5 py-2 lg:py-2.5 rounded-md hover:bg-accent/10 hover:border-accent transition-colors whitespace-nowrap"
+              className="hex-btn font-mono hidden sm:inline-flex items-center justify-center mx-3"
+              aria-label="Say hi — go to the contact section"
             >
-              say hi ↗
+              <span className="hex-btn__clip" aria-hidden="true">
+                <span className="hex-btn__corner hex-btn__corner--lt" />
+                <span className="hex-btn__corner hex-btn__corner--rb" />
+                <span className="hex-btn__corner hex-btn__corner--rt" />
+                <span className="hex-btn__corner hex-btn__corner--lb" />
+              </span>
+              <span className="hex-btn__arrow hex-btn__arrow--right" aria-hidden="true" />
+              <span className="hex-btn__arrow hex-btn__arrow--left" aria-hidden="true" />
+              <span className="hex-btn__label">say hi ↗</span>
             </a>
             <button
               type="button"

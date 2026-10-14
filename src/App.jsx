@@ -16,15 +16,17 @@ import BlackHoleBackground from "./components/BlackHoleBackground";
 function App() {
   const [entered, setEntered] = useState(false);
   const [showSplash, setShowSplash] = useState(false);
+  const [heroReady, setHeroReady] = useState(false);
 
   useEffect(() => {
     if (!entered) return;
     document.body.classList.add("no-scroll");
-    const timer = setTimeout(() => {
+    const splashTimer = setTimeout(() => {
       document.body.classList.remove("no-scroll");
       setShowSplash(false);
+      setHeroReady(true);
     }, 3050);
-    return () => clearTimeout(timer);
+    return () => clearTimeout(splashTimer);
   }, [entered]);
 
   if (!entered) {
@@ -51,7 +53,7 @@ function App() {
         tiltSideway={161}
       />
       <Navbar />
-      <Hero />
+      <Hero ready={heroReady} />
       <About />
       <Experience />
       <Skills />

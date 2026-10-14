@@ -45,7 +45,9 @@ export default function EntryGate({ onEnter }) {
           scaleMobile: 1.0,
           color: 0xc90000,
           backgroundColor: 0x000000,
-          maxDistance: 24.0,
+          points: 6.0,        // fewer nodes (default is ~10)
+          maxDistance: 18.0,  // shorter connection reach — fewer lines per node
+          spacing: 22.0,      // wider grid spacing — nodes spread further apart
         });
         // Let the canvas draw a couple of frames before revealing it, so the
         // fade-in never shows a blank/half-built first frame.
@@ -69,7 +71,7 @@ export default function EntryGate({ onEnter }) {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black">
+    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black overflow-hidden">
       <div
         ref={vantaHostRef}
         className="absolute inset-0 transition-opacity duration-700 ease-out"
