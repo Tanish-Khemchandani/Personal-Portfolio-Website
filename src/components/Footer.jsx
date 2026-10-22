@@ -29,7 +29,9 @@ export default function Footer() {
         <div className="font-mono text-[15px] text-ink-dim flex items-center justify-center gap-2 flex-wrap">
           <span>Built with</span>
           <ReactOrb size={40} />
-          <span>and TailwindCSS. © 2026 Tanish Khemchandani.</span>
+          <span>and</span>
+          <BrandOrb mode="tailwind" size={40} />
+          <span>© 2026 Tanish Khemchandani.</span>
         </div>
       </div>
     </footer>

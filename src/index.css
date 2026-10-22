@@ -544,7 +544,7 @@ body.no-scroll {
   border: 1px solid color-mix(in srgb, var(--c) 22%, transparent);
   border-radius: 2em;
   /* dark mode default — overridden for light mode below */
-  background: color-mix(in srgb, var(--c) 10%, #111);
+  background: #0d0d0d;
   font-size: 0.88rem;
   font-weight: 600;
   grid-auto-flow: column;
